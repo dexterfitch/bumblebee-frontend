@@ -1,13 +1,162 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-family: 'Dosis', sans-serif;
+    padding-top: 50px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+a {
+    color: #adff2f;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #FFC400;
+}
+
+.btn-block {
+    width: 100%;
+}
+
+.btn-warning:focus {
+    color: #000;
+    background-color: #adff2f;
+    border-color: #adff2f;
+    box-shadow: none;
+}
+
+.category-btn {
+    height: 16px;
+    width: 16px;
+    line-height: 0;
+    padding: 0;
+    position: relative;
+    top: 5px;
+}
+
+.category-btn div {
+    position: absolute;
+    top: 40%;
+    left: 32%;
+}
+
+.category-dropdown {
+    position: relative;
+}
+
+.category-dropdown select {
+    position: absolute;
+    top: -15px;
+    left: 22px;
+    height: 19px;
+    font-size: 11px;
+}
+
+.tilt {
+    font-size: 16px;
+    transform: rotate(45deg);
+    left: 35% !important;
+}
+
+.home-bg {
+    background:
+        radial-gradient(circle farthest-side at 0% 50%,#adff2f 23.5%,rgba(240,166,17,0) 0)21px 30px,
+        radial-gradient(circle farthest-side at 0% 50%,#367e0c 24%,rgba(240,166,17,0) 0)19px 30px,
+        linear-gradient(#adff2f 14%,rgba(240,166,17,0) 0, rgba(240,166,17,0) 85%,#adff2f 0)0 0,
+        linear-gradient(150deg,#adff2f 24%,#367e0c 0,#367e0c 26%,rgba(240,166,17,0) 0,rgba(240,166,17,0) 74%,#367e0c 0,#367e0c 76%,#adff2f 0)0 0,
+        linear-gradient(30deg,#adff2f 24%,#367e0c 0,#367e0c 26%,rgba(240,166,17,0) 0,rgba(240,166,17,0) 74%,#367e0c 0,#367e0c 76%,#adff2f 0)0 0,
+        linear-gradient(90deg,#367e0c 2%,#adff2f 0,#adff2f 98%,#367e0c 0%)0 0 #adff2f;
+    background-size: 40px 60px;
+    height: 700px;
+    width: 700px;
+    position: relative;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    opacity: 10%;
+    border-radius: 50%;
+}
+
+.about-card {
+    font-size: 150%;
+    background-color: #212529;
+    color: #FFF;
+}
+
+.hidden {
+    display: none;
+}
+
+.navbar-dark .navbar-brand {
+    color: #FFC400;
+}
+
+.nav-item a {
+    text-align: center;
+    color: rgb(255 255 255);
+    padding-right: 8px;
+    padding-left: 8px;
+    display: block;
+    text-decoration: none;
+}
+
+.nav-item:first-child a.active { 
+    color: white;
+}
+
+.nav-item a.active {
+    color: #adff2f;
+}
+
+.bee-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.palette {
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.palette a {
+    color: #000;
+}
+
+.palette-color {
+    width: 100%;
+}
+
+.color-copy {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    opacity: 50%;
+    border: none;
+    resize: none;
+    height: 20px;
+    box-sizing: unset;
+    font-family: monospace;
+    font-size: 15px;
+    padding-left: 10px;
+    overflow: hidden;
+}
+
+.color-copy:focus-visible {
+    outline: none;
+    opacity: 100%;
+}
+
+.color-title {
+    position: absolute;
+    top: 0;
+    padding: 10px;
+    background: rgb(255 255 255 / 50%);
+    max-width: 355px;
+}
+
+.color-title h1 {
+    margin: 0;
+    line-height: 0.85;
+    text-shadow: -3px -3px 3px rgb(0 0 0 / 15%);
+    font-size: 30px;
 }
