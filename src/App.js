@@ -5,7 +5,7 @@ import {
   Route,
   NavLink
 } from "react-router-dom";
-import {useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import Home from "./components/Home";
 import About from "./components/About";
 import Palettes from "./components/Palettes";
@@ -13,6 +13,22 @@ import Categories from "./components/Categories";
 
 function App() {
   const [categories, setCategories] = useState([]);
+  const [categoryFilter, setCategoryFilter] = useState("all")
+  const [palettes, setPalettes] = useState([]);
+
+  useEffect(() => {
+      let fetchAddress;
+
+      if (categoryFilter === "all") {
+          fetchAddress = "http://localhost:9292/palettes"
+      } else {
+          fetchAddress = `http://localhost:9292/palettes/category/${categoryFilter}`
+      }
+
+      fetch(fetchAddress)
+      .then(response => response.json())
+      .then(json => setPalettes(json))
+  }, [categoryFilter])
 
   useEffect(() => {
       fetch("http://localhost:9292/categories")
@@ -53,10 +69,16 @@ function App() {
             <About />
           </Route>
           <Route path="/palettes">
-            <Palettes categories={categories} />
+            <Palettes 
+              categoryFilter={categoryFilter} 
+              setCategoryFilter={setCategoryFilter} 
+              categories={categories} 
+              palettes={palettes} 
+              setPalettes={setPalettes} 
+            />
           </Route>
           <Route path="/categories">
-            <Categories categories={categories} setCategories={setCategories} />
+            <Categories setCategoryFilter={setCategoryFilter} categories={categories} setCategories={setCategories} />
           </Route>
           <Route path="/">
             <Home />

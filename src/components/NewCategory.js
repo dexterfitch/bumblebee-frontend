@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 
 function NewCategory({categories, setCategories}) {
-    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => postNewCategory(data);
 
     const postNewCategory = (data) => {
@@ -13,7 +13,7 @@ function NewCategory({categories, setCategories}) {
             body: JSON.stringify(data),
         })
         .then(setCategories([...categories, data]))
-        .then(reset())
+        .then(window.location.reload())
     }
 
     return(

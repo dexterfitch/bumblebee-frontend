@@ -1,6 +1,6 @@
 import CategoryFilterButton from "./CategoryFilterButton";
 
-function CategoryFilter({categories, setCategoryFilter, filterPalettes}) {
+function CategoryFilter({categories, setCategoryFilter}) {
 
     const handleClick = (event) => {
         setCategoryFilter(event.target.value)

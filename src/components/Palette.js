@@ -1,20 +1,20 @@
 import {useState} from "react";
 
 function Palette(
-    {pid, 
-    title, 
-    username, 
-    color1, 
-    color2, 
-    color3, 
-    color4, 
-    color5, 
-    url, 
-    image, 
-    categories, 
-    categoryFilter, 
-    palettes, 
-    setPalettes}
+        {pid, 
+        title, 
+        username, 
+        color1, 
+        color2, 
+        color3, 
+        color4, 
+        color5, 
+        url, 
+        image, 
+        categories, 
+        categoryFilter, 
+        palettes, 
+        setPalettes}
     ) {
     const [isHidden, setIsHidden] = useState(true);
 

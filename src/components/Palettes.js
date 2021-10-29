@@ -1,25 +1,8 @@
-import {useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import Palette from "./Palette"
 import CategoryFilter from "./CategoryFilter"
 
-function Palettes({categories}) {
-    const [palettes, setPalettes] = useState([]);
-    const [categoryFilter, setCategoryFilter] = useState("all")
-
-    useEffect(() => {
-        let fetchAddress;
-
-        if (categoryFilter === "all") {
-            fetchAddress = "http://localhost:9292/palettes"
-        } else {
-            fetchAddress = `http://localhost:9292/palettes/category/${categoryFilter}`
-        }
-
-        fetch(fetchAddress)
-        .then(response => response.json())
-        .then(json => setPalettes(json))
-    }, [categoryFilter])
-
+function Palettes({categories, categoryFilter, setCategoryFilter, palettes, setPalettes}) {
 
     const renderPalettes = () => {
         return palettes.map(palette => {
